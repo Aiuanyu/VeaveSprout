@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeaveSprout - WYSIWYG HTML Editor PoC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>VeaveSprout</h1>
+        <p class="subtitle">WYSIWYG HTML 編輯器概念驗證</p>
+    </header>
+
+    <div class="toolbar">
+        <button id="indent-btn" title="增加縮排">➡️ 增加縮排</button>
+        <button id="outdent-btn" title="減少縮排">⬅️ 減少縮排</button>
+        <button id="clear-btn" title="清除內容">🗑️ 清除</button>
+        <button id="load-sample-btn" title="載入範例">📄 載入範例</button>
+    </div>
+
+    <div class="container">
+        <div class="panel wysiwyg-panel">
+            <div class="panel-header">
+                <h2>WYSIWYG 編輯器</h2>
+                <span class="hint">可拖拉 &lt;li&gt; 元素調整順序</span>
+            </div>
+            <div id="wysiwyg" class="editor wysiwyg-editor" contenteditable="true">
+                <h2>歡迎使用 VeaveSprout</h2>
+                <p>這是一個簡單的 HTML WYSIWYG 編輯器概念驗證。</p>
+                <h3>功能特色：</h3>
+                <ul>
+                    <li>即時編輯 HTML 內容</li>
+                    <li>拖拉排序列表項目</li>
+                    <li>調整列表縮排</li>
+                    <li>雙向同步 WYSIWYG 與原始碼</li>
+                </ul>
+                <h3>測試清單：</h3>
+                <ol>
+                    <li>第一項：試著拖拉我</li>
+                    <li>第二項：也可以拖拉我</li>
+                    <li>第三項：改變我們的順序吧</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="panel code-panel">
+            <div class="panel-header">
+                <h2>HTML 原始碼</h2>
+                <span class="hint">與左側即時同步</span>
+            </div>
+            <textarea id="code" class="editor code-editor" spellcheck="false"></textarea>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            使用瀏覽器原生的 <code>contenteditable</code> 和 Drag & Drop API 實作<br>
+            符合最新 W3C 標準的 HTML5 應用程式
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
